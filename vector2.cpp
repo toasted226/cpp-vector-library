@@ -165,14 +165,30 @@ Vector2 Vector2::normalize()
     return vec;
 }
 
-float getMagnitude(Vector2 vector) 
+float vector2::getMagnitude(Vector2 vector) 
 {
     return sqrt(pow(vector.x, 2) + pow(vector.y, 2));
 }
 
-Vector2 getUnitVector(Vector2 vector) 
+Vector2 vector2::getUnitVector(Vector2 vector) 
 {
-    vector /= vector.magnitude();
+    return vector / vector.magnitude();
+}
 
-    return vector;
+float vector2::dotProduct(Vector2 vec1, Vector2 vec2) 
+{
+    return (vec1.x * vec2.x) + (vec1.y * vec2.y);
+}
+
+float vector2::angleBetween(Vector2 vec1, Vector2 vec2) 
+{
+    //cos theta = (dotproduct) / (||vec1|| * ||vec2||)
+    float ctheta = dotProduct(vec1, vec2) / (vec1.magnitude() * vec2.magnitude());
+    float radians = acos((float)ctheta); //Calculate angle in radians
+    return radians * (180.0 / M_PI); //Return result in degrees
+}
+
+Vector2 vector2::ones() 
+{
+    return Vector2(1, 1);
 }
