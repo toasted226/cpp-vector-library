@@ -209,3 +209,12 @@ Vector3 vector3::ones()
 {
     return Vector3(1, 1, 1);
 }
+
+Vector3 vector3::crossProduct(Vector3 vec1, Vector3 vec2) 
+{
+    float _x = vec1.y * vec2.z - vec1.z * vec2.y;
+    float _y = vec1.z * vec2.x - vec1.x * vec2.z;
+    float _z = vec1.x * vec2.y - vec1.y * vec2.x;
+
+    return Vector3(_x, _y, _z);
+}

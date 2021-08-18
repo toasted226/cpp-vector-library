@@ -104,4 +104,6 @@ namespace vector3
     float angleBetween(Vector3 vec1, Vector3 vec2);
     //Returns the 2-Dimensional Vector (1, 1, 1)
     Vector3 ones();
+    //Returns the cross product of two 3-Dimensional Vectors
+    Vector3 crossProduct(Vector3 vec1, Vector3 vec2);
 }
