@@ -4,22 +4,16 @@
 #include "vectorlib.h"
 
 Vector3::Vector3() 
-{
-    x = 0.0;
-    y = 0.0;
-    z = 0.0;
-}
+    : x(0.0), y(0.0), z(0.0)
+{}
 
 Vector3::Vector3(float _x, float _y, float _z) 
-{
-    x = _x;
-    y = _y;
-    z = _z;
-}
+    : x(_x), y(_y), z(_z)
+{}
 
 Vector3::~Vector3() {}
 
-Vector3 Vector3::operator + (const Vector3 &vec) 
+Vector3 Vector3::operator + (const Vector3& vec) 
 {
     Vector3 res;
     res.x = x + vec.x;
@@ -29,7 +23,7 @@ Vector3 Vector3::operator + (const Vector3 &vec)
     return res;
 }
 
-Vector3 Vector3::operator - (const Vector3 &vec) 
+Vector3 Vector3::operator - (const Vector3& vec) 
 {
     Vector3 res;
     res.x = x - vec.x;
@@ -39,7 +33,7 @@ Vector3 Vector3::operator - (const Vector3 &vec)
     return res;
 }
 
-Vector3 Vector3::operator * (const Vector3 &vec) 
+Vector3 Vector3::operator * (const Vector3& vec) 
 {
     Vector3 res;
     res.x = x + vec.x;
@@ -49,7 +43,7 @@ Vector3 Vector3::operator * (const Vector3 &vec)
     return res;
 }
 
-Vector3 Vector3::operator / (const Vector3 &vec) 
+Vector3 Vector3::operator / (const Vector3& vec) 
 {
     Vector3 res;
     res.x = x / vec.x;
@@ -59,7 +53,7 @@ Vector3 Vector3::operator / (const Vector3 &vec)
     return res;
 }
 
-Vector3& Vector3::operator += (const Vector3 &vec) 
+Vector3& Vector3::operator += (const Vector3& vec) 
 {
     this->x += vec.x;
     this->y += vec.y;
@@ -68,7 +62,7 @@ Vector3& Vector3::operator += (const Vector3 &vec)
     return *this;
 }
 
-Vector3& Vector3::operator -= (const Vector3 &vec) 
+Vector3& Vector3::operator -= (const Vector3& vec) 
 {
     this->x -= vec.x;
     this->y -= vec.y;
@@ -76,7 +70,7 @@ Vector3& Vector3::operator -= (const Vector3 &vec)
 
     return *this;
 }
-Vector3& Vector3::operator *= (const Vector3 &vec) 
+Vector3& Vector3::operator *= (const Vector3& vec) 
 {
     this->x *= vec.x;
     this->y *= vec.y;
@@ -85,7 +79,7 @@ Vector3& Vector3::operator *= (const Vector3 &vec)
     return *this;
 }
 
-Vector3& Vector3::operator /= (const Vector3 &vec) 
+Vector3& Vector3::operator /= (const Vector3& vec) 
 {
     this->x /= vec.x;
     this->y /= vec.y;
@@ -99,7 +93,7 @@ std::string Vector3::toStdString()
     return std::to_string(x) + ", " + std::to_string(y) + ", " + std::to_string(z);
 }
 
-Vector3 Vector3::operator * (const float &val) 
+Vector3 Vector3::operator * (const float& val) 
 {
     Vector3 res;
     res.x *= val;
@@ -109,7 +103,7 @@ Vector3 Vector3::operator * (const float &val)
     return res;
 }
 
-Vector3 Vector3::operator / (const float &val) 
+Vector3 Vector3::operator / (const float& val) 
 {
     Vector3 res;
     res.x /= val;
@@ -119,7 +113,7 @@ Vector3 Vector3::operator / (const float &val)
     return res;
 }
 
-Vector3& Vector3::operator *= (const float &val) 
+Vector3& Vector3::operator *= (const float& val) 
 {
     this->x *= val;
     this->y *= val;
@@ -128,7 +122,7 @@ Vector3& Vector3::operator *= (const float &val)
     return *this;
 }
 
-Vector3& Vector3::operator /= (const float &val) 
+Vector3& Vector3::operator /= (const float& val) 
 {
     this->x /= val;
     this->y /= val;

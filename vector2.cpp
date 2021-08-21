@@ -4,20 +4,16 @@
 #include "vectorlib.h"
 
 Vector2::Vector2() 
-{
-    x = 0.0;
-    y = 0.0;
-}
+    : x(0.0), y(0.0)
+{}
 
 Vector2::Vector2(float _x, float _y) 
-{
-    x = _x;
-    y = _y;
-}
+    : x(_x), y(_y)
+{}
 
 Vector2::~Vector2() {}
 
-Vector2 Vector2::operator + (Vector2 const &vec) 
+Vector2 Vector2::operator + (const Vector2& vec) 
 {
     Vector2 res;
     res.x = x + vec.x;
@@ -26,7 +22,7 @@ Vector2 Vector2::operator + (Vector2 const &vec)
     return res;
 }
 
-Vector2 Vector2::operator - (Vector2 const &vec) 
+Vector2 Vector2::operator - (const Vector2& vec) 
 {
     Vector2 res;
     res.x = x - vec.x;
@@ -35,7 +31,7 @@ Vector2 Vector2::operator - (Vector2 const &vec)
     return res;
 }
 
-Vector2 Vector2::operator * (Vector2 const &vec) 
+Vector2 Vector2::operator * (const Vector2& vec) 
 {
     Vector2 res;
     res.x = x * vec.x;
@@ -44,7 +40,7 @@ Vector2 Vector2::operator * (Vector2 const &vec)
     return res;
 }
 
-Vector2 Vector2::operator / (Vector2 const &vec) 
+Vector2 Vector2::operator / (const Vector2& vec) 
 {
     Vector2 res;
     res.x = x / vec.x;
@@ -53,7 +49,7 @@ Vector2 Vector2::operator / (Vector2 const &vec)
     return res;
 }
 
-Vector2& Vector2::operator += (Vector2 const &vec) 
+Vector2& Vector2::operator += (const Vector2& vec) 
 {
     this->x += vec.x;
     this->y += vec.y;
@@ -61,7 +57,7 @@ Vector2& Vector2::operator += (Vector2 const &vec)
     return *this;
 }
 
-Vector2& Vector2::operator -= (Vector2 const &vec) 
+Vector2& Vector2::operator -= (const Vector2& vec) 
 {
     this->x -= vec.x;
     this->y -= vec.y;
@@ -69,7 +65,7 @@ Vector2& Vector2::operator -= (Vector2 const &vec)
     return *this;
 }
 
-Vector2& Vector2::operator *= (Vector2 const &vec) 
+Vector2& Vector2::operator *= (const Vector2& vec) 
 {
     this->x *= vec.x;
     this->y *= vec.y;
@@ -77,7 +73,7 @@ Vector2& Vector2::operator *= (Vector2 const &vec)
     return *this;
 }
 
-Vector2& Vector2::operator /= (Vector2 const &vec) 
+Vector2& Vector2::operator /= (const Vector2& vec) 
 { 
     this->x /= vec.x;
     this->y /= vec.y;
