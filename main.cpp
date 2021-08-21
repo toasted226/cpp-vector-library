@@ -6,12 +6,12 @@ int main()
     std::cout << "-- 2D Vectors --" << std::endl;
 
     Vector2 v1(2, 3), v2(3, 2);
-    Vector2 finalVector = v1 + v2 * (vector2::ones() + vector2::ones());
+    Vector2 finalVector = v1 + v2 * (Vector2::ones() + Vector2::ones());
     finalVector += Vector2(2, 3);
     finalVector *= 2;
     float mag = finalVector.magnitude();
     Vector2 unitVector = finalVector.normalize();
-    float angle = vector2::angleBetween(v1, v2);
+    float angle = Vector2::angleBetween(v1, v2);
     
     std::cout << "Final vector value: (" << finalVector.toStdString() << ")" << std::endl;
     std::cout << "Final vector magnitude: " << mag << std::endl;
@@ -21,13 +21,13 @@ int main()
     std::cout << "\n-- 3D Vectors --" << std::endl;
 
     Vector3 v(1, 2, 3), u(4, 5, 6);
-    Vector3 fv = v + u * (vector3::ones() + vector3::ones());
+    Vector3 fv = v + u * (Vector3::ones() + Vector3::ones());
     fv += Vector3(4, 2, 4);
     fv *= 2;
     float mag3 = fv.magnitude();
     Vector3 unitV3 = fv.normalize();
-    float angle3 = vector3::angleBetween(v, u);
-    Vector3 c = vector3::crossProduct(v, u);
+    float angle3 = Vector3::angleBetween(v, u);
+    Vector3 c = Vector3::crossProduct(v, u);
 
     std::cout << "Final vector value: (" << fv.toStdString() << ")" << std::endl;
     std::cout << "Final vector magnitude: " << mag3 << std::endl;
